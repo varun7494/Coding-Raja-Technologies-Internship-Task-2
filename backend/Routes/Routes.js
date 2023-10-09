@@ -6,10 +6,9 @@ const uploadFiles = require('../Uploaders/Upload')
 
 
 router.get('/' , MyControllers.getApi )
-router.post('/uploadImage' ,  uploadFiles , MyControllers.uploadFile)
 router.post('/add-user' , MyControllers.RegisterUser )
 router.post('/login-user' , MyControllers.loginUser )
-router.post('/add-product' ,uploadFiles ,  MyControllers.addProduct )
+router.post('/add-product' ,  MyControllers.addProduct )
 router.get('/get-products' , MyControllers.getAllProducts )
 router.post('/add-to-cart' , MyControllers.addToCart);
 router.get('/get-cart-count' , MyControllers.getCartCountByUserID)

@@ -5,23 +5,23 @@ const ProductSchema  =  new mongoose.Schema({
 
    p_name : {
     type : String,
-    reuiqred : true
+    required : true
    },
    price : {
     type : String,
-    reuiqred : true
+    required : true
    },
    category : {
     type : String,
-    reuiqred : true
+    required : true
    },
    image : {
     type : String,
-    reuiqred : true
+    required : true
    },
    discount : {
     type : String,
-    reuiqred : true
+    required : true
    }
 
 

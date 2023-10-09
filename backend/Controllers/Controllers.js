@@ -378,30 +378,27 @@ exports.RemoveItemFromCart = (req,res) =>{
 
 }
 
-exports.addAddress = (req,res) =>{
-    const {u_id , addresses }  = req.body;
+exports.addAddress =(req,res)=>{
+    const {u_id, addresses} = req.body;
 
-    UserSchema.updateOne({_id : u_id } , {$set : {  all_addresses :   addresses    }}).then((data2)=>{
+    UserSchema.updateOne({_id : u_id }, {$set : { all_addresses : addresses }}).then((data2)=>{
 
         if(data2.modifiedCount == 1)
         {
             res.status(200).send({status :  200 , message : "Updated Successfully"})
-
         }
         else
         {
-            res.status(400).send({status :  400 , message : "Not Updated !! Please Try Again"})
+            res.status(400).send({status :  400 , message : " Not Updated Successfully"})
 
         }
 
-
+    
     }).catch((err)=>{
         res.status(400).send({status :  400 , message : "Something Went Wrong !! Please Try Again"})
-
     })
-  
-
 }
+
 
 function calculateSubtotal(el){
     var total  =  0
@@ -847,8 +844,8 @@ exports.getCartCountByUserID = (req,res) =>{
 
 
 exports.addProduct  =  (req,res)=>{
-    var image  = "http://localhost:8909/static/" +  req.files[0].originalname
-const {p_name , price , category , discount} = req.body;
+    
+const {p_name , price,image , category , discount} = req.body;
 
 
 
